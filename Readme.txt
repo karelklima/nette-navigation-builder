@@ -1,7 +1,7 @@
 NavigationBuilder
 =================
 
-Copyright: 2009 (c) Karel Klíma
+Copyright: 2009 (c) Karel KlÃ­ma
 URL: http://github.com/karelklima/nette-navigation-builder
 
 renderable component of NetteFramework
