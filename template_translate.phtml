@@ -1,18 +1,14 @@
-{*
- * @version    		template_translate.phtml 1.0 2009-10-18
- * @param ArrayList $items
- *}
- 
-{foreach $items as $item}
-{if $iterator->isFirst()}
-<ul>
-{/if}
-<li><a href="{$item->url}">{$item->label|translate}</a>
-{if count($item->items)}
-{include $template->getFile() 'items' => $item->items}
-{/if}
-</li>
-{if $iterator->isLast()}
+<ul class="whooa">
+{assign children $control->getRoot()->getItems()}
+{block #nav}
+	{foreach $children as $item}
+	<li><a href="{$item->url}">{$item->label|translate}</a>
+	{if count($item->getItems())}
+		<ul>
+			{include #nav, children => $item->getItems()}
+		</ul>
+	{/if}
+	</li>
+	{/foreach}
+{/block}
 </ul>
-{/if}
-{/foreach}
