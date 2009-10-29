@@ -322,7 +322,7 @@ class NavigationNode extends ComponentContainer
 		}
 		$node = new self;
 		$node->label = $label;
-		$node->url = '#';
+		$node->url = $url;
 		$node->sortBy(($sortBy <> NULL) ? $sortBy : $this->sortBy);
 		$node->priority = ($priority <> NULL) ? $priority : $this->defaultPriority;
 		$node->defaultPriority = $this->defaultPriority;

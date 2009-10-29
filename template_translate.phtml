@@ -2,7 +2,7 @@
 {assign children $control->getRoot()->getItems()}
 {block #nav}
 	{foreach $children as $item}
-	<li><a href="{$item->url}">{$item->label|translate}</a>
+	<li{if $item->isCurrent} class="current"{/if}><a href="{$item->url}">{$item->label|translate}</a>
 	{if count($item->getItems())}
 		<ul>
 			{include #nav, children => $item->getItems()}
